@@ -7,8 +7,9 @@
     <style>
         body { font-family: Arial, sans-serif; }
         header { text-align: center; padding: 20px; }
-        .project { margin: 20px 0; text-align: center; }
-        .project img { width: 300px; height: 200px; }
+        .projects { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .project { margin: 20px; text-align: center; flex: 1 1 30%; }
+        .project img { width: 100%; height: auto; max-width: 300px; }
         .project-title { font-size: 1.5em; margin: 10px 0; }
         .project-description { font-size: 1em; color: #555; }
     </style>
@@ -22,21 +23,21 @@
     <div class="projects">
         <div class="project">
             <a href="https://www.google.com">
-                <img src="../images/image1.jpg" alt="Project 1">
+                <img src="images/image1.jpg" alt="Project 1">
                 <div class="project-title">Project Title 1</div>
                 <div class="project-description">Brief description of Project 1</div>
             </a>
         </div>
         <div class="project">
             <a href="https://www.google.com">
-                <img src="../images/image2.jpg" alt="Project 2">
+                <img src="images/image2.jpg" alt="Project 2">
                 <div class="project-title">Project Title 2</div>
                 <div class="project-description">Brief description of Project 2</div>
             </a>
         </div>
         <div class="project">
             <a href="https://www.google.com">
-                <img src="../images/image3.jpg" alt="Project 3">
+                <img src="images/image3.jpg" alt="Project 3">
                 <div class="project-title">Project Title 3</div>
                 <div class="project-description">Brief description of Project 3</div>
             </a>
