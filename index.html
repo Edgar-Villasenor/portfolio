@@ -12,8 +12,10 @@
         .project img { width: 100%; height: auto; max-width: 300px; }
         .project-title { font-size: 1.5em; margin: 10px 0; }
         .project-description { font-size: 1em; color: #555; }
+        iframe { width: 100%; height: 400px; border: none; }
         .accordion { cursor: pointer; color: blue; text-decoration: underline; }
-        .panel { display: none; }
+        .panel { padding: 0 18px; display: none; background-color: white; overflow: hidden; }
+        ul { margin: 0; padding: 0; list-style-type: disc; padding-left: 20px; }
     </style>
 </head>
 <body>
@@ -32,7 +34,11 @@
             </a>
             <p>Brief description of Project 1. This project involves predictive modeling to forecast sales. <span class="accordion">Read more</span></p>
             <div class="panel">
-                <p>Main techniques implemented: Data cleaning, Machine learning algorithms, Data visualization</p>
+                <ul>
+                    <li>Data cleaning</li>
+                    <li>Machine learning algorithms</li>
+                    <li>Data visualization</li>
+                </ul>
             </div>
         </div>
         <div class="project">
@@ -42,7 +48,11 @@
             </a>
             <p>Brief description of Project 2. This project explores statistical analysis to uncover market trends. <span class="accordion">Read more</span></p>
             <div class="panel">
-                <p>Main techniques implemented: Statistical analysis, Predictive modeling, Data preprocessing</p>
+                <ul>
+                    <li>Statistical analysis</li>
+                    <li>Predictive modeling</li>
+                    <li>Data preprocessing</li>
+                </ul>
             </div>
         </div>
         <div class="project">
@@ -52,7 +62,11 @@
             </a>
             <p>Brief description of Project 3. This project uses clustering techniques for customer segmentation. <span class="accordion">Read more</span></p>
             <div class="panel">
-                <p>Main techniques implemented: Feature engineering, Text mining, Clustering</p>
+                <ul>
+                    <li>Feature engineering</li>
+                    <li>Text mining</li>
+                    <li>Clustering</li>
+                </ul>
             </div>
         </div>
     </div>
