@@ -9,13 +9,14 @@
         header { text-align: center; padding: 20px; }
         .projects { display: flex; justify-content: space-around; flex-wrap: wrap; }
         .project { margin: 20px; text-align: center; flex: 1 1 30%; }
-        .project img { width: 100%; height: auto; max-width: 300px; }
-        .project-title { font-size: 1.5em; margin: 10px 0; }
+        .project img { width: 100%; height: auto; max-width: 300px; cursor: pointer; }
+        .project-title { font-size: 1.5em; margin: 10px 0; cursor: pointer; }
         .project-description { font-size: 1em; color: #555; }
         iframe { width: 100%; height: 400px; border: none; display: none; }
         .accordion { cursor: pointer; color: blue; text-decoration: underline; }
         .panel { padding: 0 18px; display: none; background-color: white; overflow: hidden; text-align: left; }
         ul { margin: 0; padding: 0; list-style-type: disc; padding-left: 20px; text-align: left; }
+        #iframeContainer { display: none; }
 
         /* Media query for narrow screens */
         @media (max-width: 600px) {
@@ -28,16 +29,15 @@
     <header>
         <h1>My Portfolio</h1>
         <a href="https://www.linkedin.com">LinkedIn</a> |
-        <a href="https://github.com">GitHub</a>
+        <a href="https://github.com">GitHub</a> |
+        <a href="#" onclick="showPortfolio()">Portfolio Home</a>
         <hr>
         <p>Welcome to my portfolio! Here you'll find a selection of my data science projects showcasing various techniques and tools I've used.</p>
     </header>
-    <div class="projects">
+    <div id="portfolioContent" class="projects">
         <div class="project">
-            <a href="https://www.google.com">
-                <img src="images/image1.jpg" alt="Project 1">
-                <div class="project-title">Project Title 1</div>
-            </a>
+            <img src="images/image1.jpg" alt="Project 1" onclick="openApp('app1')">
+            <div class="project-title" onclick="openApp('app1')">Project Title 1</div>
             <p>Brief description of Project 1. This project involves predictive modeling to forecast sales. <span class="accordion">Read more</span></p>
             <div class="panel">
                 <ul>
@@ -46,13 +46,10 @@
                     <li>Data visualization</li>
                 </ul>
             </div>
-            <button onclick="openApp('app1')">Open Project</button>
         </div>
         <div class="project">
-            <a href="https://www.google.com">
-                <img src="images/image2.jpg" alt="Project 2">
-                <div class="project-title">Project Title 2</div>
-            </a>
+            <img src="images/image2.jpg" alt="Project 2" onclick="openApp('app2')">
+            <div class="project-title" onclick="openApp('app2')">Project Title 2</div>
             <p>Brief description of Project 2. This project explores statistical analysis to uncover market trends. <span class="accordion">Read more</span></p>
             <div class="panel">
                 <ul>
@@ -61,13 +58,10 @@
                     <li>Data preprocessing</li>
                 </ul>
             </div>
-            <button onclick="openApp('app2')">Open Project</button>
         </div>
         <div class="project">
-            <a href="https://www.google.com">
-                <img src="images/image3.jpg" alt="Project 3">
-                <div class="project-title">Project Title 3</div>
-            </a>
+            <img src="images/image3.jpg" alt="Project 3" onclick="openApp('app3')">
+            <div class="project-title" onclick="openApp('app3')">Project Title 3</div>
             <p>Brief description of Project 3. This project uses clustering techniques for customer segmentation. <span class="accordion">Read more</span></p>
             <div class="panel">
                 <ul>
@@ -76,10 +70,9 @@
                     <li>Clustering</li>
                 </ul>
             </div>
-            <button onclick="openApp('app3')">Open Project</button>
         </div>
     </div>
-    <div id="iframeContainer" style="display: none;">
+    <div id="iframeContainer">
         <button onclick="closeApp()">Close Project</button>
         <iframe id="projectIframe"></iframe>
     </div>
@@ -87,6 +80,8 @@
         function openApp(appId) {
             var iframe = document.getElementById('projectIframe');
             var iframeContainer = document.getElementById('iframeContainer');
+            var portfolioContent = document.getElementById('portfolioContent');
+            
             if (appId === 'app1') {
                 iframe.src = 'https://github.com';
             } else if (appId === 'app2') {
@@ -94,16 +89,24 @@
             } else if (appId === 'app3') {
                 iframe.src = 'https://google.com';
             }
-            iframe.style.display = 'block';
+            
+            portfolioContent.style.display = 'none';
             iframeContainer.style.display = 'block';
         }
 
         function closeApp() {
             var iframe = document.getElementById('projectIframe');
             var iframeContainer = document.getElementById('iframeContainer');
+            var portfolioContent = document.getElementById('portfolioContent');
+            
             iframe.src = '';
             iframe.style.display = 'none';
             iframeContainer.style.display = 'none';
+            portfolioContent.style.display = 'flex';
+        }
+
+        function showPortfolio() {
+            closeApp();
         }
 
         document.addEventListener("DOMContentLoaded", function() {
