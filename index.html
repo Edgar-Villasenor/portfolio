@@ -29,8 +29,7 @@
     <header>
         <h1>My Portfolio</h1>
         <a href="https://www.linkedin.com">LinkedIn</a> |
-        <a href="https://github.com">GitHub</a> |
-        <a href="#" onclick="showPortfolio()">Portfolio Home</a>
+        <a href="https://github.com">GitHub</a>
         <hr>
         <p>Welcome to my portfolio! Here you'll find a selection of my data science projects showcasing various techniques and tools I've used.</p>
     </header>
@@ -74,7 +73,7 @@
     </div>
     <div id="iframeContainer">
         <button onclick="closeApp()">Close Project</button>
-        <iframe id="projectIframe" src="https://example.com"></iframe>
+        <iframe id="projectIframe"></iframe>
     </div>
     <script>
         function openApp(appId) {
@@ -83,9 +82,9 @@
             var portfolioContent = document.getElementById('portfolioContent');
 
             if (appId === 'app1') {
-                iframe.src = 'https://example.com';
+                iframe.src = 'https://traingenerator.streamlit.app/';
             } else if (appId === 'app2') {
-                iframe.src = 'https://example.com';
+                iframe.src = 'https://hub.graphistry.com';
             } else if (appId === 'app3') {
                 iframe.src = 'https://example.com';
             }
@@ -104,10 +103,6 @@
             iframe.style.display = 'none';
             iframeContainer.style.display = 'none';
             portfolioContent.style.display = 'flex';
-        }
-
-        function showPortfolio() {
-            closeApp();
         }
 
         document.addEventListener("DOMContentLoaded", function() {
