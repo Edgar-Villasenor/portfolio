@@ -74,7 +74,7 @@
     </div>
     <div id="iframeContainer">
         <button onclick="closeApp()">Close Project</button>
-        <iframe id="projectIframe"></iframe>
+        <iframe id="projectIframe" src="https://example.com"></iframe>
     </div>
     <script>
         function openApp(appId) {
@@ -83,11 +83,11 @@
             var portfolioContent = document.getElementById('portfolioContent');
 
             if (appId === 'app1') {
-                iframe.src = 'https://github.com';
+                iframe.src = 'https://example.com';
             } else if (appId === 'app2') {
-                iframe.src = 'https://linkedin.com';
+                iframe.src = 'https://example.com';
             } else if (appId === 'app3') {
-                iframe.src = 'https://google.com';
+                iframe.src = 'https://example.com';
             }
 
             portfolioContent.style.display = 'none';
