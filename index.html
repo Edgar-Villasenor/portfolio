@@ -82,11 +82,11 @@
             var portfolioContent = document.getElementById('portfolioContent');
 
             if (appId === 'app1') {
-                iframe.src = 'https://prettymapp.streamlit.app';
+                iframe.src = 'https://prettymapp.streamlit.app/?embedded=true';
             } else if (appId === 'app2') {
-                iframe.src = 'https://echarts.streamlit.app';
+                iframe.src = 'https://echarts.streamlit.app/?embedded=true';
             } else if (appId === 'app3') {
-                iframe.src = 'https://gw-quickview.streamlit.app';
+                iframe.src = 'https://gw-quickview.streamlit.app/?embedded=true';
             }
 
             portfolioContent.style.display = 'none';
