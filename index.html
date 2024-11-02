@@ -45,7 +45,6 @@
             padding: 20px; 
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
             z-index: 2000;
-            width: 60%; /* Increase width */
         }
         .contact-form.active {
             display: block;
@@ -78,7 +77,6 @@
         .panel { padding: 0 18px; display: none; background-color: white; overflow: hidden; text-align: left; }
         ul { margin: 0; padding: 0; list-style-type: disc; padding-left: 20px; text-align: left; }
         #iframeContainer { display: none; }
-        #welcomeMessage { margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px; }
 
         /* Media query for narrow screens */
         @media (max-width: 600px) {
@@ -99,9 +97,10 @@
             <a href="#" onclick="toggleContactForm()">Contact</a>
         </div>
     </div>
-    <header id="welcomeMessage">
-        <p>Welcome to my portfolio! Here you'll find a selection of my data science projects showcasing various techniques and tools I've used.</p>
+    <header>
+        <h1>My Portfolio</h1>
         <hr>
+        <p>Welcome to my portfolio! Here you'll find a selection of my data science projects showcasing various techniques and tools I've used.</p>
     </header>
     <div id="portfolioContent" class="projects">
         <div class="project">
@@ -157,7 +156,6 @@
             var iframe = document.getElementById('projectIframe');
             var iframeContainer = document.getElementById('iframeContainer');
             var portfolioContent = document.getElementById('portfolioContent');
-            var welcomeMessage = document.getElementById('welcomeMessage');
 
             if (appId === 'app1') {
                 iframe.src = 'https://prettymapp.streamlit.app/?embedded=true';
@@ -167,7 +165,6 @@
                 iframe.src = 'https://gw-quickview.streamlit.app/?embedded=true';
             }
 
-            welcomeMessage.style.display = 'none'; // Hide welcome message
             portfolioContent.style.display = 'none';
             iframe.style.display = 'block';
             iframeContainer.style.display = 'block';
@@ -177,13 +174,11 @@
             var iframe = document.getElementById('projectIframe');
             var iframeContainer = document.getElementById('iframeContainer');
             var portfolioContent = document.getElementById('portfolioContent');
-            var welcomeMessage = document.getElementById('welcomeMessage');
 
             iframe.src = '';
             iframe.style.display = 'none';
             iframeContainer.style.display = 'none';
             portfolioContent.style.display = 'flex';
-            welcomeMessage.style.display = 'block'; // Show welcome message
         }
 
         function toggleContactForm() {
@@ -192,9 +187,30 @@
         }
 
         function submitForm() {
-            var name = document.querySelector('.contact-form input[type="text"]').value;
-            var email = document.querySelector('.contact-form input[type="email"]').value;
-            var message = document.querySelector('.contact-form textarea').value;
+            alert('Form submitted!');
+        }
 
-            var emailBody = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-            window.location.href = `mailto:e[_{{{CITATION{{{_1{](https://github.com/P-T-Nguyen/portfolio0001/tree/66e12465af73b4cc61d4a58370231ba5b9288c04/HERO_IMG.md)[_{{{CITATION{{{_2{](https://github.com/marianacher/Portfolio/tree/212bb4ada7212f3ae146087c184cb8088a22c917/component.js)
+        document.addEventListener("DOMContentLoaded", function() {
+            var accordions = document.getElementsByClassName("accordion");
+            for (var i = 0; i < accordions.length; i++) {
+                accordions[i].addEventListener("click", function() {
+                    var panel = this.parentElement.nextElementSibling;
+
+                    // Close all panels
+                    var allPanels = document.getElementsByClassName("panel");
+                    for (var j = 0; j < allPanels.length; j++) {
+                        allPanels[j].style.display = "none";
+                    }
+
+                    // Open the clicked panel
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
